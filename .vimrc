@@ -2,7 +2,7 @@
 
 " set number &&  multi-command in one line!
 set relativenumber number numberwidth=2
-
+set foldcolumn=1
 set hlsearch incsearch " highlight when performing search
 		
 " mapping {{{
@@ -43,6 +43,7 @@ augroup loggroup
 augroup END
 
 autocmd FileType python :iabbrev <buffer> self self
+autocmd FileType python :iabbrev <buffer> reutrn return
 ":autocmd FileType python nnoremap <buffer> <localleader>c I#
 
 
@@ -81,7 +82,29 @@ set statusline+=%L "total line
 
 
 " function  {{{
+
+"nnoremap <leader>f :call foldcolumntoggle()<cr>
+"
+"function! foldcolumntoggle()
+"    echom &foldcolumn
+"endfunction
+
 "}}}
 
 
 
+" helper_function  {{{
+
+
+
+
+function! Reversed(l)
+	let new_list = deepcopy(a:l)
+	call reverse(new_list)
+	return new_list
+endfunction
+
+
+
+
+"}}}
