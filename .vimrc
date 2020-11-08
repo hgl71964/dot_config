@@ -1,10 +1,11 @@
-" start  vim comend
+" start  vim comment
 
 " set number &&  multi-command in one line!
 set relativenumber number numberwidth=2
 
+set hlsearch incsearch " highlight when performing search
 		
-" mapping 
+" mapping {{{
 nnoremap <C-j> yyddp
 nnoremap <C-k> yydd<Up><Up>p
 nnoremap <S-j> v<Down>
@@ -14,26 +15,28 @@ nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 inoremap <C-d> <ESC>ddi
 inoremap <C-l> <ESC>$i<Right>
 inoremap <C-h> <ESC>0i
-inoremap ' ''<Left>
 inoremap < <><Left>
 inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
-inoremap " ""<Left>
+""inoremap ' ''<Left>
+""inoremap " ""<Left>
+"}}}
 
 
-" mapleader 
+
+" mapleader {{{ 
 let mapleader = "-"
 let localleader = ","
 nnoremap <leader>config  :vsplit $MYVIMRC<cr> 
 nnoremap <leader>fconfig :source $MYVIMRC<cr>
+"}}}
 
-" abbreviations example -> correct typo 
+" abbreviations example for correct typo 
 " :iabbrev slef self 
 
 
-
-" auto command
+" auto command {{{
 
 augroup loggroup
 	autocmd BufWrite * :echom "Writing buffer!"
@@ -42,17 +45,17 @@ augroup END
 autocmd FileType python :iabbrev <buffer> self self
 ":autocmd FileType python nnoremap <buffer> <localleader>c I#
 
-" Vimscript file settings ---------------------- {{{
+
 augroup filetype_vim
 	autocmd!
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
-" }}}
+
+"}}}
 
 
 
-
-" statusline 
+" statusline {{{
 set laststatus=2
 
 set statusline=%f " relative path
@@ -67,7 +70,18 @@ set statusline+=Lines:\
 set statusline+=%l " Current line
 set statusline+=/
 set statusline+=%L "total line
+"}}}
 
 
 
-"afqwrqwrqwrq"
+" branching {{{
+" ==# is the case-sensitive comparison no matter what the user has set
+" ==? is the case-insensitive comparison no matter what the user has set
+"}}}
+
+
+" function  {{{
+"}}}
+
+
+
