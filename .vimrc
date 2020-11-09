@@ -1,28 +1,26 @@
-" start  vim comment
+ "start  vim comment
 
-" set number &&  multi-command in one line!
-set relativenumber number numberwidth=2
-set foldcolumn=1
+" vim path: /usr/share/vim/vim81
+" to see how to use package -> :h package 
+" check runtimepath -> :set rtp? -> :h rtp
+
+" VIM basic
+filetype on
+filetype indent plugin on " set for python 
+
+syntax enable
+set background=dark
+colorscheme pablo
+
+set relativenumber number numberwidth=1
+
+set expandtab " tab expand as spaces 
+let b:indent_width = 4 " local variable for indent width
+let &tabstop=b:indent_width " tab = 4 space in all files
+let &shiftwidth=b:indent_width
+
 set hlsearch incsearch " highlight when performing search
-		
-" mapping {{{
-nnoremap <C-j> yyddp
-nnoremap <C-k> yydd<Up><Up>p
-nnoremap <S-j> v<Down>
-nnoremap <S-k> v<Up>
-nnoremap <Space> viw
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-inoremap <C-d> <ESC>ddi
-inoremap <C-l> <ESC>$i<Right>
-inoremap <C-h> <ESC>0i
-inoremap < <><Left>
-inoremap ( ()<Left>
-inoremap [ []<Left>
-inoremap { {}<Left>
-""inoremap ' ''<Left>
-""inoremap " ""<Left>
-"}}}
-
+set foldcolumn=1  cursorline  showmatch  autoindent
 
 
 " mapleader {{{ 
@@ -32,8 +30,37 @@ nnoremap <leader>config  :vsplit $MYVIMRC<cr>
 nnoremap <leader>fconfig :source $MYVIMRC<cr>
 "}}}
 
-" abbreviations example for correct typo 
-" :iabbrev slef self 
+
+
+
+" mapping {{{
+nnoremap <C-j> yyddp
+nnoremap <C-k> yydd<Up><Up>p
+nnoremap <S-j> v<Down>
+nnoremap <S-k> v<Up>
+nnoremap <Space> viw
+inoremap <C-d> <Esc>ddi
+inoremap <S-Tab> <C-d>
+inoremap <C-l> <ESC>$i<Right>
+inoremap <C-h> <ESC>0i
+inoremap < <><Left>
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+xnoremap <C-c> "*y
+""inoremap ' ''<Left>
+""inoremap " ""<Left>
+"}}}
+
+
+
+
+" Python settings {{{
+autocmd FileType python nnoremap <buffer> <localleader>c I#
+autocmd FileType python :iabbrev <buffer> reutrn return
+autocmd FileType python :iabbrev <buffer> slef self
+" }}}
+
 
 
 " auto command {{{
@@ -42,9 +69,6 @@ augroup loggroup
 	autocmd BufWrite * :echom "Writing buffer!"
 augroup END
 
-autocmd FileType python :iabbrev <buffer> self self
-autocmd FileType python :iabbrev <buffer> reutrn return
-":autocmd FileType python nnoremap <buffer> <localleader>c I#
 
 
 augroup filetype_vim
@@ -53,6 +77,7 @@ augroup filetype_vim
 augroup END
 
 "}}}
+
 
 
 
@@ -75,10 +100,13 @@ set statusline+=%L "total line
 
 
 
+
 " branching {{{
 " ==# is the case-sensitive comparison no matter what the user has set
 " ==? is the case-insensitive comparison no matter what the user has set
 "}}}
+
+
 
 
 " function  {{{
@@ -90,6 +118,7 @@ set statusline+=%L "total line
 "endfunction
 
 "}}}
+
 
 
 
@@ -108,3 +137,8 @@ endfunction
 
 
 "}}}
+
+
+
+
+
