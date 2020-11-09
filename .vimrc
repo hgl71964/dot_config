@@ -4,6 +4,7 @@
 " to see how to use package -> :h packages
 " check runtimepath -> :set rtp? -> :h rtp
 
+" exmaple of plugin: :h write-plugin
 " plugin foo path: ~./vim/pack/foo
 " plugin structure: foo/start; foo/opt
 
@@ -57,15 +58,6 @@ xnoremap <C-c> "*y
 
 
 
-
-" Python settings {{{
-autocmd FileType python nnoremap <buffer> <localleader>c I#
-autocmd FileType python :iabbrev <buffer> reutrn return
-autocmd FileType python :iabbrev <buffer> slef self
-" }}}
-
-
-
 " auto command {{{
 
 augroup loggroup
@@ -87,8 +79,18 @@ augroup END
 " statusline {{{
 set laststatus=2
 
+" TODO: reset git branch display after making my plugin
+"if exists('g:loaded_gitbranch') || v:version < 700
+"  finish
+"endif
+"let g:loaded_gitbranch = 1
+"
+"
+"
+"
+
 let b:get_git_name  = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-let b:git_name = strlen(b:get_git_name) > 0?'  '.b:get_git_name.' ':'_'
+let b:git_name = strlen(b:get_git_name) > 0?' '.b:get_git_name.' ':' _'
 
 set statusline=%f " relative path
 set statusline+=%#LineNr# "syntax highlighting
@@ -99,7 +101,7 @@ set statusline+=\ -\ " separator
 set statusline+=loc_branch: 
 set statusline+=%{b:git_name}
 set statusline+=%=        " Switch to the right side
-set statusline+=%#Folded#
+set statusline+=%#Folded# " highlight group
 set statusline+=Lines:\ 
 set statusline+=%l " Current line
 set statusline+=/
