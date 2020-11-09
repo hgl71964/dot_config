@@ -1,8 +1,11 @@
  "start  vim comment
 
 " vim path: /usr/share/vim/vim81
-" to see how to use package -> :h package 
+" to see how to use package -> :h packages
 " check runtimepath -> :set rtp? -> :h rtp
+
+" plugin foo path: ~./vim/pack/foo
+" plugin structure: foo/start; foo/opt
 
 " VIM basic
 filetype on
@@ -84,12 +87,17 @@ augroup END
 " statusline {{{
 set laststatus=2
 
+let b:get_git_name  = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+let b:git_name = strlen(b:get_git_name) > 0?'  '.b:get_git_name.' ':'_'
+
 set statusline=%f " relative path
 set statusline+=%#LineNr# "syntax highlighting
 set statusline+=\ -\ " separator 
-set statusline+=FileType: " Label
+set statusline+=ft: " Label
 set statusline+=%y        " Filetype of the file
-
+set statusline+=\ -\ " separator 
+set statusline+=loc_branch: 
+set statusline+=%{b:git_name}
 set statusline+=%=        " Switch to the right side
 set statusline+=%#Folded#
 set statusline+=Lines:\ 
@@ -132,8 +140,6 @@ function! Reversed(l)
 	call reverse(new_list)
 	return new_list
 endfunction
-
-
 
 
 "}}}
