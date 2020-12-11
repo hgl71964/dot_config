@@ -10,3 +10,7 @@ alias tre="tree -CL 2"
 
 # example of chaning prompt sign
 # PS1=">> "
+
+### use AWS with docker, auto apply credential
+# $ alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
+
