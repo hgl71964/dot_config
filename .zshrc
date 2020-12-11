@@ -12,5 +12,7 @@ alias tre="tree -CL 2"
 # PS1=">> "
 
 ### use AWS with docker, auto apply credential
-# $ alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
-
+alias aws='docker run --rm -it amazon/aws-cli'
+# auto apply credential
+#  alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
+### end of AWS
