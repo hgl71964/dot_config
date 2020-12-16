@@ -11,8 +11,7 @@ alias gs="git status"
 alias "ggraph"="git log --oneline --graph --color --all --decorate"
 ### end of git
 
-# example of chaning prompt sign
-# PS1=">> "
+
 
 ### AWS
 alias aws='docker run --rm -it amazon/aws-cli'
@@ -26,3 +25,8 @@ alias aws='docker run --rm -it amazon/aws-cli'
 alias dk="docker"
 ### end of docker
 
+### config prompt sign
+# PS1=">> "
+#autoload -U colors && colors
+#PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
+### end of config prompt
