@@ -9,6 +9,7 @@ alias tre="tree -CL 2"
 ### git 
 alias gs="git status"
 alias "ggraph"="git log --oneline --graph --color --all --decorate"
+alias "gam"="git add . && git commit -m 'lazy_commit'"
 ### end of git
 
 
@@ -33,4 +34,7 @@ alias dk="docker"
 
 ### 
 setopt CORRECT  # correct when typo
-### end of set opt
+### end of set opt#
+
+
+
