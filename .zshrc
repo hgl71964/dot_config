@@ -32,8 +32,9 @@ alias dk="docker"
 #PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 ### end of config prompt
 
-### 
+### zsh shell option
 setopt CORRECT  # correct when typo
+setopt no_case_glob  # case-insensitive globbing
 ### end of set opt#
 
 
