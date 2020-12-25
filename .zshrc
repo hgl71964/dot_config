@@ -28,13 +28,6 @@ PROMPT="%{$fg[magenta]%}%1~ %(?.%{$fg[green]%}√.%{$fg[red]%}x)%b "
 #RPROMPT="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M"
 
 # integrate git into PROMPT
-#autoload -Uz vcs_info
-#precmd_vcs_info() { vcs_info }
-#precmd_functions+=( precmd_vcs_info )
-#setopt prompt_subst
-#RPROMPT=\$vcs_info_msg_0_      # set prompt
-#zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)'
-
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
