@@ -44,7 +44,11 @@ setopt HIST_IGNORE_DUPS  # do not store duplications
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+compinit -u
 _comp_options+=(globdots)		# Include hidden files.`
 ### end of auto-complete
 
+### syntax-highligh
+# see: https://github.com/zsh-users/zsh-syntax-highlighting; put right path
+source $HOME/git_repo/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+### end of syntax-highlight
