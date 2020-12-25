@@ -27,15 +27,24 @@ alias dk="docker"
 ### end of docker
 
 ### config prompt sign
-# PS1=">> "
-#autoload -U colors && colors
+autoload -U colors && colors
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 #PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 ### end of config prompt
 
 ### zsh shell option
 setopt CORRECT  # correct when typo
 setopt no_case_glob  # case-insensitive globbing
+setopt share_history
+setopt INC_APPEND_HISTORY # adds commands as they are typed
+setopt HIST_IGNORE_DUPS  # do not store duplications
 ### end of set opt#
 
-
+### tab auto-complete 
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.`
+### end of auto-complete
 
