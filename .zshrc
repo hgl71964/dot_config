@@ -55,10 +55,8 @@ source $HOME/git_repo/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 ### bindkey with vim
-bindkey -v 
-
-#Delay between ESC and mode change
-export KEYTIMEOUT=1
+bindkey -v  # enable vim in zsh
+export KEYTIMEOUT=1  #Delay between ESC and mode change
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
@@ -80,5 +78,4 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt
-
 ### end of bindkey with vim
