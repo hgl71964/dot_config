@@ -12,15 +12,11 @@ alias "ggraph"="git log --oneline --graph --color --all --decorate"
 alias "gam"="git add . && git commit -m 'lazy_commit'"
 ### end of git
 
-
-
 ### AWS
 alias aws='docker run --rm -it amazon/aws-cli'
-
 # auto apply credential
 #  alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 ### end of AWS
-#
 
 ### docker
 alias dk="docker"
@@ -32,13 +28,21 @@ PROMPT="%{$fg[magenta]%}%1~ %(?.%{$fg[green]%}√.%{$fg[red]%}x)%b "
 #RPROMPT="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M"
 
 # integrate git into PROMPT
+#autoload -Uz vcs_info
+#precmd_vcs_info() { vcs_info }
+#precmd_functions+=( precmd_vcs_info )
+#setopt prompt_subst
+#RPROMPT=\$vcs_info_msg_0_      # set prompt
+#zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)'
+
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
-# PROMPT=\$vcs_info_msg_0_'%# '
-zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)'
+zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%F{cyan}%r%f'
+zstyle ':vcs_info:*' enable git
+
 #PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 ### end of config prompt
 
@@ -66,7 +70,7 @@ source $HOME/git_repo/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ### bindkey with vim
 #see: https://gist.github.com/LukeSmithxyz/e62f26e55ea8b0ed41a65912fbebbe52
-bindkey -v  # enable vim in zsh
+bindkey -v # enable vim in zsh
 export KEYTIMEOUT=1  #Delay between ESC and mode change
 
 # Change cursor shape for different vi modes.
