@@ -29,7 +29,16 @@ alias dk="docker"
 ### config prompt sign
 autoload -U colors && colors
 PROMPT="%{$fg[magenta]%}%1~ %(?.%{$fg[green]%}√.%{$fg[red]%}x)%b "
-RPROMPT="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M"
+#RPROMPT="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M"
+
+# integrate git into PROMPT
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT=\$vcs_info_msg_0_
+# PROMPT=\$vcs_info_msg_0_'%# '
+zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)'
 #PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 ### end of config prompt
 
