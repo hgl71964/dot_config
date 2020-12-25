@@ -41,7 +41,7 @@ setopt HIST_IGNORE_DUPS  # do not store duplications
 ### end of set opt#
 
 ### tab auto-complete 
-autoload -U compinit
+autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit -u
