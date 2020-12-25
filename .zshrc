@@ -26,16 +26,13 @@ alias dk="docker"
 autoload -U colors && colors
 PROMPT="%{$fg[magenta]%}%1~ %(?.%{$fg[green]%}√.%{$fg[red]%}x)%b "
 #RPROMPT="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M"
-
-# integrate git into PROMPT
-autoload -Uz vcs_info
+autoload -Uz vcs_info      # integrate git into PROMPT
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
+setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%F{cyan}%r%f'
 zstyle ':vcs_info:*' enable git
-
 #PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 ### end of config prompt
 
@@ -60,12 +57,10 @@ _comp_options+=(globdots)		# Include hidden files.`
 source $HOME/git_repo/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ### end of syntax-highlight
 
-
 ### bindkey with vim
 #see: https://gist.github.com/LukeSmithxyz/e62f26e55ea8b0ed41a65912fbebbe52
 bindkey -v # enable vim in zsh
 export KEYTIMEOUT=1  #Delay between ESC and mode change
-
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
