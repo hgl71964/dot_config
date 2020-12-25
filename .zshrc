@@ -55,6 +55,7 @@ source $HOME/git_repo/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 ### bindkey with vim
+#see: https://gist.github.com/LukeSmithxyz/e62f26e55ea8b0ed41a65912fbebbe52
 bindkey -v  # enable vim in zsh
 export KEYTIMEOUT=1  #Delay between ESC and mode change
 
