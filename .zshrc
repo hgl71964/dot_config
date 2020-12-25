@@ -1,5 +1,5 @@
 # example of adding python path
-export PYTHONPATH=/usr
+# export PYTHONPATH=/usr # where python will search for packages 
 
 ### command short hand
 alias ll="ls -al"
