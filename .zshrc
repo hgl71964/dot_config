@@ -37,6 +37,7 @@ zstyle ':vcs_info:*' enable git
 ### end of config prompt
 
 ### zsh shell option
+# to reset all shell option: emulate -LR zsh
 setopt CORRECT  # correct when typo
 setopt no_case_glob  # case-insensitive globbing
 setopt share_history
