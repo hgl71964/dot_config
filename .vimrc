@@ -1,5 +1,5 @@
 " start  vim comment 
-" vim path: /usr/share/vim/vim81 
+" vim path: /usr/share/vim/vim82
 " to see how to use package -> :h packages 
 " check runtimepath -> :set rtp? -> :h rtp 
 " exmaple of plugin: :h write-plugin 
