@@ -34,7 +34,9 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 RPROMPT=\$vcs_info_msg_0_
 setopt prompt_subst
-zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%F{cyan}%r%f'
+
+# zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%F{cyan}%r%f'
+zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)'
 zstyle ':vcs_info:*' enable git
 #PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 ### end of config prompt
