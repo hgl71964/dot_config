@@ -26,7 +26,7 @@ alias dk="docker"
 autoload -U colors && colors
 PROMPT="%{$fg[magenta]%}%1~ %(?.%{$fg[green]%}√.%{$fg[red]%}x)%b "
 
-# PROMPT="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%1    ~ %(?.%{$fg[green]%}�~H~Z.%{$fg[red]%}x)%b "
+# PROMPT="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%1~  %(?.%{$fg[green]%}√.%{$fg[red]%}x)%b "
 #RPROMPT="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M"
 
 autoload -Uz vcs_info      # integrate git into PROMPT
