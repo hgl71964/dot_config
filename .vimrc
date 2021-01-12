@@ -14,7 +14,13 @@
 " VIM basic
 filetype on
 filetype indent plugin on 
-syntax enable " slight different from colour on 
+
+syntax enable 
+" The ":syntax enable" command will keep your current color settings.  This
+" allows using ":highlight" commands to set your preferred colors before or
+" after using this command.  If you want Vim to overrule your settings with the
+" defaults, use:syntax on
+
 set background=dark
 colorscheme default
 
