@@ -11,13 +11,12 @@
 " end of vim tips
 
 
-
 " VIM basic
 filetype on
 filetype indent plugin on 
-syntax enable
+syntax enable " slight different from colour on 
 set background=dark
-colorscheme pablo
+colorscheme default
 
 set relativenumber number numberwidth=1
 
