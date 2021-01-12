@@ -1,9 +1,18 @@
-" start  vim comment 
+" vim tips
+" where was an option set  
+" :scriptnames            : list all plugins, _vimrcs loaded (super)  
+" :verbose set history?   : reveals value of history and where set  
+" :function               : list functions  
+" :func SearchCompl       : List particular function
+
 " vim path: /usr/share/vim/vim82
 " to see how to use package -> :h packages 
 " check runtimepath -> :set rtp? -> :h rtp 
 " exmaple of plugin: :h write-plugin 
-" plugin foo path: ~./vim/pack/foo " plugin structure: foo/start; foo/opt
+" plugin to see: https://github.com/vim/vim/blob/03c3bd9fd094c1aede2e8fe3ad8fd25b9f033053/runtime/doc/repeat.txt#L515
+" end of vim tips
+
+
 
 " VIM basic
 filetype on
