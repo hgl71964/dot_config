@@ -1,15 +1,13 @@
 " vim tips
-" where was an option set  
-" :scriptnames            : list all plugins, _vimrcs loaded (super)  
-" :verbose set history?   : reveals value of history and where set  
-" :function               : list functions  
-" :func SearchCompl       : List particular function
-
+" 1. :scriptnames            : list all plugins, _vimrcs loaded (super)  
+" 2. :verbose set history?   : reveals value of history and where set  
+" 3. :function               : list functions  
+" 4. :func SearchCompl       : List particular function
+" 5. :colorscheme <Space> <TAB> : to choose among colour scheme
 " vim path: /usr/share/vim/vim82
-" to see how to use package -> :h packages 
-" check runtimepath -> :set rtp? -> :h rtp 
+" to see how to use package (plugin) -> :h packages
 " exmaple of plugin: :h write-plugin 
-" plugin to see: https://github.com/vim/vim/blob/03c3bd9fd094c1aede2e8fe3ad8fd25b9f033053/runtime/doc/repeat.txt#L515
+" check runtimepath -> :set rtp? -> :h rtp 
 " end of vim tips
 
 
