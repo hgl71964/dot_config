@@ -166,5 +166,10 @@ autocmd BufNewFile,BufRead *.py
     \ set shiftwidth=4
     \ set foldmethod=indent
     \ set encoding=utf-8  "for python 3
+
+" compile & run python within vim 
+" autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+" autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
 " }}}
 
