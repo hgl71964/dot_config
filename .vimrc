@@ -157,5 +157,6 @@ endfunction
 "}}}
 
 
+" set encoding=utf-8 for python 3
 
 
