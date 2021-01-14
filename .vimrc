@@ -166,6 +166,8 @@ autocmd BufNewFile,BufRead *.py
     \ set shiftwidth=4
     \ set foldmethod=indent
     \ set encoding=utf-8  "for python 3
+    
+autocmd BufEnter *.py colorscheme torte
 
 " compile & run python within vim 
 " autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
