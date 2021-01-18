@@ -8,7 +8,8 @@ alias tre="tree -CL 2"
 
 ### git 
 alias gs="git status"
-alias "ggraph"="git log --oneline --graph --color --all --decorate"
+# visual last 10 via graph
+alias "ggraph"="git log --oneline -n 10 --graph --color --all --decorate"  
 alias "gam"="git add . && git commit -m 'lazy_commit'"
 ### end of git
 
