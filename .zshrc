@@ -44,7 +44,7 @@ zstyle ':vcs_info:*' enable git
 
 ### zsh shell option
 # to reset all shell option: emulate -LR zsh (useful for scripting)
-setopt CORRECT  # correct when typo
+# setopt CORRECT  # correct when typo
 setopt no_case_glob  # case-insensitive globbing
 setopt share_history
 setopt INC_APPEND_HISTORY # adds commands as they are typed
