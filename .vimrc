@@ -57,7 +57,7 @@ inoremap <C-d> <Esc>ddi
 inoremap <S-Tab> <C-d>
 inoremap <C-l> <ESC>$i<Right>
 inoremap <C-h> <ESC>0i
-inoremap < <><Left>
+" inoremap < <><Left>
 inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
