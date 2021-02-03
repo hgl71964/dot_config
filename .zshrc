@@ -19,6 +19,10 @@ alias aws='docker run --rm -it amazon/aws-cli'
 #  alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 ### end of AWS
 
+### python
+alias "py"="python3"
+### end of python
+
 ### docker
 alias dk="docker"
 ### end of docker
