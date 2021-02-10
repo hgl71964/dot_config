@@ -15,6 +15,10 @@
 
 " VIM basic
 filetype on
+
+" set noerrorbells
+
+
 filetype indent plugin on 
 
 syntax enable 
@@ -33,8 +37,13 @@ let b:indent_width = 4 " local variable for indent width
 let &tabstop=b:indent_width " tab = 4 space in all files
 let &shiftwidth=b:indent_width
 
+set nowrap
+set smartindent
+set smartcase  " case insensive searching
+" set autoindent
+
 set hlsearch incsearch " highlight when performing search
-set foldcolumn=1  cursorline  showmatch  autoindent
+set foldcolumn=1  cursorline  showmatch  
 
 
 " mapleader {{{ 
