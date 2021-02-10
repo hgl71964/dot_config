@@ -28,7 +28,7 @@ syntax enable
 " defaults, use:syntax on
 
 set background=dark
-colorscheme default
+colorscheme default  " can use gruvbox if installed
 
 set relativenumber number numberwidth=1
 
@@ -44,6 +44,17 @@ set smartcase  " case insensive searching
 
 set hlsearch incsearch " highlight when performing search
 set foldcolumn=1  cursorline  showmatch  
+
+
+" recommended plug-ins
+" gruvbox -> color scheme
+" vim-man -> man pages
+" rtags -> great for cpp
+" ctrlp vim -> nice file finding
+" YouCompleteMe -> autocomplete
+" undo tree -> ??
+" end of recommended plug-ins
+
 
 
 " mapleader {{{ 
