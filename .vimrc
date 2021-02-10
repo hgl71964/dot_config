@@ -52,7 +52,7 @@ set foldcolumn=1  cursorline  showmatch
 " rtags -> great for cpp
 " ctrlp vim -> nice file finding
 " YouCompleteMe -> autocomplete
-" undo tree -> ??
+" undo tree -> like git graph allowing quick view of progress
 " end of recommended plug-ins
 
 
