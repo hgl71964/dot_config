@@ -58,7 +58,9 @@ set foldcolumn=1  cursorline  showmatch
 
 
 " mapleader {{{ 
-let mapleader = "-"
+" use " " will choose the <space bar>
+
+let mapleader = "-"  
 let localleader = ","
 nnoremap <leader>config  :vsplit $MYVIMRC<cr> 
 nnoremap <leader>fconfig :source $MYVIMRC<cr>
