@@ -37,7 +37,7 @@ let b:indent_width = 4 " local variable for indent width
 let &tabstop=b:indent_width " tab = 4 space in all files
 let &shiftwidth=b:indent_width
 
-set nowrap
+set wrap " nowrap
 set smartindent
 set smartcase  " case insensive searching
 " set autoindent
