@@ -12,7 +12,7 @@
 " check runtimepath -> :set rtp? -> :h rtp 
 " end of vim tips
 
-
+" set {{{
 " VIM basic
 filetype on
 
@@ -48,12 +48,17 @@ set smartindent
 
 " search 
 set smartcase  " case insensive searching
-set hlsearch incsearch " highlight when performing search
+set hlsearch " no highlight after search
+set incsearch 
 set showmatch
 " end of search 
 
-set wrap " or nowrap
-set foldcolumn=1  
+set nowrap " no wrap for long line 
+set signcolumn=yes
+" set foldcolumn=1  
+set colorcolumn=100
+set noerrorbells 
+set scrolloff=8  " keep the cursor off edge
 
 " cursor 
 "  1 -> blinking block
@@ -65,12 +70,14 @@ set foldcolumn=1
 let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
-set cursorline  " underline of current line
+" set cursorline  " underline of current line
 
 " this overwrite the conflict caused by .zshrc when entering file
 autocmd VimEnter * silent exec "! echo -ne '\e[2 q'"
 autocmd VimLeave * silent exec "! echo -ne '\e[5 q'"
 " end of cursor
+"}}}
+
 
 " recommended plug-ins
 " gruvbox -> color scheme
@@ -85,14 +92,12 @@ autocmd VimLeave * silent exec "! echo -ne '\e[5 q'"
 
 " mapleader {{{ 
 " use " " will choose the <space bar>
-
 let mapleader = "-"  
 let localleader = ","
+
 nnoremap <leader>config  :vsplit $MYVIMRC<cr> 
 nnoremap <leader>fconfig :source $MYVIMRC<cr>
 "}}}
-
-
 
 
 " mapping {{{
@@ -100,7 +105,6 @@ nnoremap <C-j> yyddp
 nnoremap <C-k> yydd<Up><Up>p
 nnoremap <S-j> v<Down>
 nnoremap <S-k> v<Up>
-nnoremap <Space> viw
 inoremap <C-d> <Esc>ddi
 inoremap <S-Tab> <C-d>
 inoremap <C-l> <ESC>$i<Right>
@@ -115,23 +119,31 @@ xnoremap <C-c> "*y
 "}}}
 
 
-
 " auto command {{{
 
 augroup loggroup
 	autocmd BufWrite * :echom "Writing buffer!"
 augroup END
 
-
-
 augroup filetype_vim
-	autocmd!
+    " clear all autocmd for this group 
+	autocmd!  
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
+" python
+autocmd BufEnter *.py colorscheme torte
+autocmd BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set foldmethod=indent
+    \ set encoding=utf-8  "for python 3
+
+" compile & run python within vim 
+" autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+" autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 "}}}
-
-
 
 
 " statusline {{{
@@ -167,14 +179,10 @@ set statusline+=%L "total line
 "}}}
 
 
-
-
 " branching {{{
 " ==# is the case-sensitive comparison no matter what the user has set
 " ==? is the case-insensitive comparison no matter what the user has set
 "}}}
-
-
 
 
 " function  {{{
@@ -186,8 +194,6 @@ set statusline+=%L "total line
 "endfunction
 
 "}}}
-
-
 
 
 " helper_function  {{{
@@ -203,23 +209,3 @@ endfunction
 
 
 "}}}
-
-
-" python {{{
-autocmd BufNewFile,BufRead *.py
-    \ set expandtab  " replace tabs with spaces
-    \ set autoindent "copy indent when starting a new line
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set foldmethod=indent
-    \ set encoding=utf-8  "for python 3
-    
-autocmd BufEnter *.py colorscheme torte
-
-" compile & run python within vim 
-" autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-" autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-
-" }}}
-
