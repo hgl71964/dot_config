@@ -27,24 +27,50 @@ syntax enable
 " after using this command.  If you want Vim to overrule your settings with the
 " defaults, use:syntax on
 
+" color
 set background=dark
 colorscheme default  " can use gruvbox if installed
+" end of color 
 
+
+" line number
 set relativenumber number numberwidth=1
+" end of line number
 
+" tab
 set expandtab " tab expand as spaces 
 let b:indent_width = 4 " local variable for indent width
 let &tabstop=b:indent_width " tab = 4 space in all files
 let &shiftwidth=b:indent_width
-
-set wrap " nowrap
 set smartindent
-set smartcase  " case insensive searching
 " set autoindent
+" end of tab
 
+" search 
+set smartcase  " case insensive searching
 set hlsearch incsearch " highlight when performing search
-set foldcolumn=1  cursorline  showmatch  
+set showmatch
+" end of search 
 
+set wrap " or nowrap
+set foldcolumn=1  
+
+" cursor 
+"  1 -> blinking block
+"  2 -> solid block 
+"  3 -> blinking underscore
+"  4 -> solid underscore
+"  5 -> blinking vertical bar
+"  6 -> solid vertical bar
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
+set cursorline  " underline of current line
+
+" this overwrite the conflict caused by .zshrc when entering file
+autocmd VimEnter * silent exec "! echo -ne '\e[2 q'"
+autocmd VimLeave * silent exec "! echo -ne '\e[5 q'"
+" end of cursor
 
 " recommended plug-ins
 " gruvbox -> color scheme
