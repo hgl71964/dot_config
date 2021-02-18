@@ -105,7 +105,7 @@ precmd_functions+=(_fix_cursor)
 # 4  ⇒  steady underline.
 # 5  ⇒  blinking bar, xterm.
 # 6  ⇒  steady bar, xterm.
-#
+
 ### end of bindkey with vim
 
 ### auto suggestion
