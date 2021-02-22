@@ -13,6 +13,10 @@ alias "ggraph"="git log --oneline -n 10 --graph --color --all --decorate"
 alias "gam"="git add . && git commit -m 'lazy_commit'"
 ### end of git
 
+### tmux
+alias tm=tmux
+### end of tmux
+
 ### AWS
 alias aws='docker run --rm -it amazon/aws-cli'
 # auto apply credential
