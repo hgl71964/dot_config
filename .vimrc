@@ -179,9 +179,11 @@ set statusline+=%#LineNr# "syntax highlighting
 set statusline+=\ -\ " separator 
 set statusline+=ft: " Label
 set statusline+=%y        " Filetype of the file
-set statusline+=\ -\ " separator 
-set statusline+=loc_branch: 
-set statusline+=%{b:git_name}
+
+" disable git name in status bar
+" set statusline+=\ -\ " separator 
+" set statusline+=loc_branch: 
+" set statusline+=%{b:git_name}
 set statusline+=%=        " Switch to the right side
 set statusline+=%#Folded# " highlight group
 set statusline+=Lines:\ 
