@@ -58,7 +58,7 @@ set signcolumn=yes
 " set foldcolumn=1  
 set colorcolumn=100
 set noerrorbells 
-set scrolloff=8  " keep the cursor off edge
+set scrolloff=8  " keep the cursor off page edge, keeping cursor centered
 
 " cursor 
 "  1 -> blinking block
