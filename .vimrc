@@ -50,7 +50,7 @@ set smartindent
 set smartcase  " case insensive searching
 set hlsearch " no highlight after search
 set incsearch 
-set showmatch
+set showmatch " show the matching part of the pair for [] {} and ()
 " end of search 
 
 set nowrap " no wrap for long line 
