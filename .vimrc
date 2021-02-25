@@ -132,6 +132,9 @@ augroup filetype_vim
 augroup END
 
 " python
+
+" let python_highlight_all = 1 " TODO test: enable all py syntax highlight
+
 autocmd BufEnter *.py colorscheme torte
 autocmd BufNewFile,BufRead *.py
     \ set tabstop=4
