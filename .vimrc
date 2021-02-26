@@ -145,10 +145,9 @@ augroup END
 
 " python
 
-" let python_highlight_all = 1 " TODO test: enable all py syntax highlight
-
 autocmd BufEnter *.py colorscheme torte
 autocmd BufNewFile,BufRead *.py
+    \ let python_highlight_all=1 " TODO test: enable all py syntax highlight
     \ set tabstop=4
     \ set softtabstop=4
     \ set shiftwidth=4
