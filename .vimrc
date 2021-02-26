@@ -113,23 +113,23 @@ inoremap <C-h> <ESC>0i
 inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
 xnoremap <C-c> "*y
 xnoremap ( xi()<Esc>P
 xnoremap [ xi[]<Esc>P
 xnoremap { xi{}<Esc>P
 xnoremap ' xi''<Esc>P
 xnoremap " xi""<Esc>P
-""inoremap ' ''<Left>
-""inoremap " ""<Left>
 "}}}
 
 
 " auto command {{{
 
-" automatic highlight matching work under the cursor
+" automatic highlight matching work under the cursor, FIXME if highlight color can customise?
 " By default, this will highlight the word under the cursor after 4s of inactivity.
-autocmd CursorHold * :exec 'match Search /\V\<' . expand('<cword>') . '\>/'
-set updatetime=100 " to make it happen after 0.1s instead.
+" autocmd CursorHold * :exec 'match Search /\V\<' . expand('<cword>') . '\>/'
+" set updatetime=100 " to make it happen after 0.1s instead.
 
 
 
