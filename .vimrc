@@ -145,7 +145,7 @@ augroup END
 
 " python
 
-autocmd BufEnter *.py colorscheme torte
+" autocmd BufEnter *.py colorscheme torte
 autocmd BufNewFile,BufRead *.py
     \ let python_highlight_all=1 " TODO test: enable all py syntax highlight
     \ set tabstop=4
