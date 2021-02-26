@@ -126,6 +126,13 @@ xnoremap " xi""<Esc>P
 
 " auto command {{{
 
+" automatic highlight matching work under the cursor
+" By default, this will highlight the word under the cursor after 4s of inactivity.
+autocmd CursorHold * :exec 'match Search /\V\<' . expand('<cword>') . '\>/'
+set updatetime=100 " to make it happen after 0.1s instead.
+
+
+
 augroup loggroup
 	autocmd BufWrite * :echom "Writing buffer!"
 augroup END
