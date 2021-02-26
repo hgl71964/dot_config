@@ -29,9 +29,12 @@ syntax enable
 
 " color
 set background=dark
-colorscheme default  " can use gruvbox if installed
+colorscheme gruvbox  " can use gruvbox if installed
 " end of color 
 
+" encoding
+set encoding=utf-8  "for python 3
+" end of encoding
 
 " line number
 set relativenumber number numberwidth=1
@@ -39,9 +42,14 @@ set relativenumber number numberwidth=1
 
 " tab
 set expandtab " tab expand as spaces 
-let b:indent_width = 4 " local variable for indent width
-let &tabstop=b:indent_width " tab = 4 space in all files
+
+" local variable for indent width
+let b:indent_width = 4 
+
+" tab space in all files
+let &tabstop=b:indent_width
 let &shiftwidth=b:indent_width
+set softtabstop=4
 set smartindent
 " set autoindent
 " end of tab
@@ -72,9 +80,6 @@ let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 " set cursorline  " underline of current line
 
-" this overwrite the conflict caused by .zshrc when entering file
-autocmd VimEnter * silent exec "! echo -ne '\e[2 q'"
-autocmd VimLeave * silent exec "! echo -ne '\e[5 q'"
 " end of cursor
 "}}}
 
@@ -132,6 +137,9 @@ xnoremap " xi""<Esc>P
 " set updatetime=100 " to make it happen after 0.1s instead.
 
 
+" this overwrite the conflict caused by .zshrc when entering file
+autocmd VimEnter * silent exec "! echo -ne '\e[2 q'"
+autocmd VimLeave * silent exec "! echo -ne '\e[5 q'"
 
 augroup loggroup
 	autocmd BufWrite * :echom "Writing buffer!"
@@ -144,15 +152,8 @@ augroup filetype_vim
 augroup END
 
 " python
-
-" autocmd BufEnter *.py colorscheme torte
-autocmd BufNewFile,BufRead *.py
-    " \ let python_highlight_all=1 " TODO test: enable all py syntax highlight
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set foldmethod=indent
-    \ set encoding=utf-8  "for python 3
+" \ let python_highlight_all=1 " TODO test: enable all py syntax highlight
+autocmd BufEnter *.py let python_highlight_all=1
 
 " compile & run python within vim 
 " autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
@@ -213,7 +214,7 @@ set statusline+=%L "total line
 "}}}
 
 
-" function  {{{
+"  function  {{{
 
 "nnoremap <leader>f :call foldcolumntoggle()<cr>
 "
@@ -222,7 +223,7 @@ set statusline+=%L "total line
 "endfunction
 
 "}}}
-
+       
 
 " helper_function  {{{
 
