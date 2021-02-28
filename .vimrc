@@ -240,7 +240,7 @@ set statusline+=%y        " Filetype of the file
 " set statusline+=%{b:git_name}
 set statusline+=%=        " Switch to the right side
 set statusline+=%#Folded# " highlight group
-set statusline+=Lines:\
+set statusline+=Lines:
 set statusline+=%l " Current line
 set statusline+=/
 set statusline+=%L "total line
