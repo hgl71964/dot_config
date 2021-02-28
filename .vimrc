@@ -12,7 +12,6 @@
 " check runtimepath -> :set rtp? -> :h rtp 
 " end of vim tips
 
-
 " recommended plug-ins
 " gruvbox -> color scheme
 " multi-selection -> multi-cursor
@@ -22,6 +21,11 @@
 " YouCompleteMe -> autocomplete
 " undo tree -> like git graph allowing quick view of progress
 " end of recommended plug-ins
+
+
+" basic {{{
+" VIM basic
+filetype on
 
 " color
 let g:gruvbox_bold=1
@@ -33,13 +37,6 @@ colorscheme gruvbox  " can use gruvbox if installed
 "set termguicolors  enable by default
 set background=dark
 " end of color 
-
-" set {{{
-" VIM basic
-filetype on
-
-" set noerrorbells
-
 
 filetype indent plugin on 
 
@@ -133,6 +130,28 @@ xnoremap [ xi[]<Esc>P
 xnoremap { xi{}<Esc>P
 xnoremap ' xi''<Esc>P
 xnoremap " xi""<Esc>P
+
+" Insert mode auto delete pairs; e.g. () <BS> -> delete both quote
+let g:couples = ['(#)', '[#]', '{#}', '<#>', '<div>#</div>', '"#"', ]  " TODO add ' to the list
+function BetterBS()
+
+    for l:couple in g:couples
+        if ! (l:couple =~ '#')
+            continue
+        endif
+        let l:regex = substitute(escape(l:couple, '/\^$*.[~'), '#', '\\%#', '')
+        if search(l:regex, 'n')
+            let l:out = repeat("\<BS>", len(matchstr(l:couple, '^.\{-}\ze#')))
+            let l:out .= repeat("\<DEL>", len(matchstr(l:couple, '#\zs.\{-}$')))
+            return l:out
+        endif
+    endfor
+
+    return "\<BS>"
+endfunction
+inoremap <silent> <BS> <C-r>=BetterBS()<CR>
+" end of insert mode delete
+"
 "}}}
 
 
