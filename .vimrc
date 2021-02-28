@@ -23,6 +23,16 @@
 " undo tree -> like git graph allowing quick view of progress
 " end of recommended plug-ins
 
+" color
+let g:gruvbox_bold=1
+"let g:gruvbox_italic=1
+let g:gruvbox_underline=1
+let g:gruvbox_termcolors=256
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox  " can use gruvbox if installed
+"set termguicolors  enable by default
+set background=dark
+" end of color 
 
 " set {{{
 " VIM basic
@@ -39,10 +49,6 @@ syntax enable
 " after using this command.  If you want Vim to overrule your settings with the
 " defaults, use:syntax on
 
-" color
-set background=dark
-colorscheme torte  " can use gruvbox if installed
-" end of color 
 
 " encoding
 set encoding=utf-8  "for python 3
@@ -78,7 +84,7 @@ set signcolumn=yes
 " set foldcolumn=1  
 set colorcolumn=100
 set noerrorbells 
-set scrolloff=8  " keep the cursor off page edge, keeping cursor centered
+set scrolloff=10  " keep the cursor off page edge, keeping cursor centered
 
 " cursor 
 "  1 -> blinking block
