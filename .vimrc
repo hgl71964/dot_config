@@ -124,7 +124,6 @@ inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap " ""<Left>
 inoremap ' ''<Left>
-xnoremap <C-c> "*y
 xnoremap ( xi()<Esc>P
 xnoremap [ xi[]<Esc>P
 xnoremap { xi{}<Esc>P
