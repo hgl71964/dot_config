@@ -12,6 +12,18 @@
 " check runtimepath -> :set rtp? -> :h rtp 
 " end of vim tips
 
+
+" recommended plug-ins
+" gruvbox -> color scheme
+" multi-selection -> multi-cursor
+" vim-man -> man pages
+" rtags -> great for cpp
+" ctrlp vim -> nice file finding
+" YouCompleteMe -> autocomplete
+" undo tree -> like git graph allowing quick view of progress
+" end of recommended plug-ins
+
+
 " set {{{
 " VIM basic
 filetype on
@@ -29,7 +41,7 @@ syntax enable
 
 " color
 set background=dark
-colorscheme gruvbox  " can use gruvbox if installed
+colorscheme torte  " can use gruvbox if installed
 " end of color 
 
 " encoding
@@ -82,17 +94,6 @@ let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
 " end of cursor
 "}}}
-
-
-" recommended plug-ins
-" gruvbox -> color scheme
-" vim-man -> man pages
-" rtags -> great for cpp
-" ctrlp vim -> nice file finding
-" YouCompleteMe -> autocomplete
-" undo tree -> like git graph allowing quick view of progress
-" end of recommended plug-ins
-
 
 
 " mapleader {{{ 
