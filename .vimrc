@@ -1,15 +1,15 @@
 " vim tips
-" 1. :scriptnames            : list all plugins, _vimrcs loaded (super)  
-" 2. :verbose set history?   : reveals value of history and where set  
-" 3. :function               : list functions  
+" 1. :scriptnames            : list all plugins, _vimrcs loaded (super)
+" 2. :verbose set history?   : reveals value of history and where set
+" 3. :function               : list functions
 " 4. :func SearchCompl       : List particular function
 " 5. :colorscheme <Space> <TAB> : to choose among colour scheme
 " 6. :@: 			:repeat last colon command
 " 7. plugin: YOUCOMPLETEME
 " vim path: /usr/share/vim/vim82
 " to see how to use package (plugin) -> :h packages
-" exmaple of plugin: :h write-plugin 
-" check runtimepath -> :set rtp? -> :h rtp 
+" exmaple of plugin: :h write-plugin
+" check runtimepath -> :set rtp? -> :h rtp
 " end of vim tips
 
 " recommended plug-ins
@@ -36,11 +36,11 @@ let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox  " can use gruvbox if installed
 "set termguicolors  enable by default
 set background=dark
-" end of color 
+" end of color
 
-filetype indent plugin on 
+filetype indent plugin on
 
-syntax enable 
+syntax enable
 " The ":syntax enable" command will keep your current color settings.  This
 " allows using ":highlight" commands to set your preferred colors before or
 " after using this command.  If you want Vim to overrule your settings with the
@@ -56,10 +56,10 @@ set relativenumber number numberwidth=1
 " end of line number
 
 " tab
-set expandtab " tab expand as spaces 
+set expandtab " tab expand as spaces
 
 " local variable for indent width
-let b:indent_width = 4 
+let b:indent_width = 4
 
 " tab space in all files
 let &tabstop=b:indent_width
@@ -69,23 +69,23 @@ set smartindent
 " set autoindent
 " end of tab
 
-" search 
+" search
 set smartcase  " case insensive searching
 set hlsearch " no highlight after search
-set incsearch 
+set incsearch
 set showmatch " show the matching part of the pair for [] {} and ()
-" end of search 
+" end of search
 
-set nowrap " no wrap for long line 
+set nowrap " no wrap for long line
 set signcolumn=yes
-" set foldcolumn=1  
+" set foldcolumn=1
 set colorcolumn=100
-set noerrorbells 
+set noerrorbells
 set scrolloff=10  " keep the cursor off page edge, keeping cursor centered
 
-" cursor 
+" cursor
 "  1 -> blinking block
-"  2 -> solid block 
+"  2 -> solid block
 "  3 -> blinking underscore
 "  4 -> solid underscore
 "  5 -> blinking vertical bar
@@ -99,12 +99,12 @@ let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 "}}}
 
 
-" mapleader {{{ 
+" mapleader {{{
 " use " " will choose the <space bar>
-let mapleader = "-"  
+let mapleader = "-"
 let localleader = ","
 
-nnoremap <leader>config  :vsplit $MYVIMRC<cr> 
+nnoremap <leader>config  :vsplit $MYVIMRC<cr>
 nnoremap <leader>fconfig :source $MYVIMRC<cr>
 "}}}
 
@@ -166,13 +166,27 @@ inoremap <silent> <BS> <C-r>=BetterBS()<CR>
 autocmd VimEnter * silent exec "! echo -ne '\e[2 q'"
 autocmd VimLeave * silent exec "! echo -ne '\e[5 q'"
 
+" delete trailing white space when save
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfunction
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+" end of delete trailing white space when save
+
+
+
+
 augroup loggroup
 	autocmd BufWrite * :echom "Writing buffer!"
 augroup END
 
 augroup filetype_vim
-    " clear all autocmd for this group 
-	autocmd!  
+    " clear all autocmd for this group
+	autocmd!
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
@@ -180,7 +194,7 @@ augroup END
 " \ let python_highlight_all=1 " TODO test: enable all py syntax highlight
 autocmd BufEnter *.py let python_highlight_all=1
 
-" compile & run python within vim 
+" compile & run python within vim
 " autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 " autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 "}}}
@@ -200,33 +214,33 @@ set laststatus=2
 "
 
 " TODO: this shows how to display buffer number ...
-" set laststatus=2                             " always show statusbar  
-" set statusline=  
-" set statusline+=%-10.3n\                     " buffer number  
-" set statusline+=%f\                          " filename   
-" set statusline+=%h%m%r%w                     " status flags  
-" set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type  
-" set statusline+=%=                           " right align remainder  
-" set statusline+=0x%-8B                       " character value  
-" set statusline+=%-14(%l,%c%V%)               " line, character  
-" set statusline+=%<%P                         " file position  
+" set laststatus=2                             " always show statusbar
+" set statusline=
+" set statusline+=%-10.3n\                     " buffer number
+" set statusline+=%f\                          " filename
+" set statusline+=%h%m%r%w                     " status flags
+" set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+" set statusline+=%=                           " right align remainder
+" set statusline+=0x%-8B                       " character value
+" set statusline+=%-14(%l,%c%V%)               " line, character
+" set statusline+=%<%P                         " file position
 
 let b:get_git_name  = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 let b:git_name = strlen(b:get_git_name) > 0?' '.b:get_git_name.' ':' _'
 
 set statusline=%f " relative path
 set statusline+=%#LineNr# "syntax highlighting
-set statusline+=\ -\ " separator 
+set statusline+=\ -\ " separator
 set statusline+=ft: " Label
 set statusline+=%y        " Filetype of the file
 
 " disable git name in status bar
-" set statusline+=\ -\ " separator 
-" set statusline+=loc_branch: 
+" set statusline+=\ -\ " separator
+" set statusline+=loc_branch:
 " set statusline+=%{b:git_name}
 set statusline+=%=        " Switch to the right side
 set statusline+=%#Folded# " highlight group
-set statusline+=Lines:\ 
+set statusline+=Lines:\
 set statusline+=%l " Current line
 set statusline+=/
 set statusline+=%L "total line
@@ -248,7 +262,7 @@ set statusline+=%L "total line
 "endfunction
 
 "}}}
-       
+
 
 " helper_function  {{{
 
