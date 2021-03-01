@@ -115,6 +115,11 @@ nnoremap <C-j> yyddp
 nnoremap <C-k> yydd<Up><Up>p
 nnoremap <S-j> v<Down>
 nnoremap <S-k> v<Up>
+
+" fix the * position, but goes to the start of the current word
+nnoremap * *N
+
+
 inoremap <C-d> <Esc>ddi
 inoremap <S-Tab> <C-d>
 inoremap <C-l> <ESC>$i<Right>
@@ -125,6 +130,9 @@ inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap " ""<Left>
 inoremap ' ''<Left>
+
+
+
 xnoremap <leader>( xi()<Esc>P
 xnoremap <leader>[ xi[]<Esc>P
 xnoremap <leader>{ xi{}<Esc>P
