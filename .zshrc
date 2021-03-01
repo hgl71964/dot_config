@@ -1,5 +1,17 @@
-# example of adding python path
-# export PYTHONPATH=/usr # where python will search for packages 
+
+### syntax-highligh
+# see: https://github.com/zsh-users/zsh-syntax-highlighting; put right path
+source $HOME/git_repo/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+### end of syntax-highlight
+
+
+### syntax-autosuggestion
+# see: https://github.com/zsh-users/zsh-autosuggestions.git
+source $HOME/git_repo/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"  # configurable
+### end of syntax-autosuggestion
+
+
 
 ### command short hand
 alias ll="ls -al"
@@ -67,10 +79,6 @@ compinit -u
 _comp_options+=(globdots)		# Include hidden files.`
 ### end of auto-complete
 
-### syntax-highligh
-# see: https://github.com/zsh-users/zsh-syntax-highlighting; put right path
-source $HOME/git_repo/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-### end of syntax-highlight
 
 ### bindkey with vim
 #see: https://gist.github.com/LukeSmithxyz/e62f26e55ea8b0ed41a65912fbebbe52
