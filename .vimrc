@@ -100,8 +100,9 @@ let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
 
 " mapleader {{{
+
 " use " " will choose the <space bar>
-let mapleader = "-"
+let mapleader = " "
 let localleader = ","
 
 nnoremap <leader>config  :vsplit $MYVIMRC<cr>
@@ -124,11 +125,11 @@ inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap " ""<Left>
 inoremap ' ''<Left>
-xnoremap ( xi()<Esc>P
-xnoremap [ xi[]<Esc>P
-xnoremap { xi{}<Esc>P
-xnoremap ' xi''<Esc>P
-xnoremap " xi""<Esc>P
+xnoremap <leader>( xi()<Esc>P
+xnoremap <leader>[ xi[]<Esc>P
+xnoremap <leader>{ xi{}<Esc>P
+xnoremap <leader>' xi''<Esc>P
+xnoremap <leader>" xi""<Esc>P
 
 " Insert mode auto delete pairs; e.g. () <BS> -> delete both quote
 let g:couples = ['(#)', '[#]', '{#}', '<#>', '<div>#</div>', '"#"', ]  " TODO add ' to the list
