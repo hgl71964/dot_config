@@ -14,7 +14,7 @@
 
 " recommended plug-ins
 " gruvbox -> color scheme
-" multi-selection -> multi-cursor
+" multi-selection -> vim-visual-multi
 " vim-man -> man pages
 " rtags -> great for cpp
 " ctrlp vim -> nice file finding
