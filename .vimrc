@@ -12,6 +12,7 @@
 " check runtimepath -> :set rtp? -> :h rtp
 " end of vim tips
 
+" TODO add a script to auto-install vim plug in
 " recommended plug-ins
 " gruvbox -> color scheme
 " multi-selection -> vim-visual-multi
