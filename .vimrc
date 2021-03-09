@@ -47,6 +47,14 @@ syntax enable
 " after using this command.  If you want Vim to overrule your settings with the
 " defaults, use:syntax on
 
+" backspace 
+" vim will protect deletion from backspace
+" indent -> allow <bs> delete indentation
+" eol -> allow <bs> delete end of line mark
+" indent -> if off, you can only delete text you've insert since insert mode started
+
+set backspace=indent,eol,start
+" end of backspace 
 
 " encoding
 set encoding=utf-8  "for python 3
