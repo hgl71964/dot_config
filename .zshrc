@@ -15,7 +15,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"  # configura
 
 ### command short hand
 alias ll="ls -al"
-alias ls="ls --color=auto"  # for linux
+# alias ls="ls --color=auto"  # for linux
 alias tre="tree -CL 2"
 ### end of short hand
 
