@@ -15,13 +15,14 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"  # configura
 
 ### command short hand
 alias ll="ls -al"
+alias ls="ls --color=auto"  # for linux
 alias tre="tree -CL 2"
 ### end of short hand
 
-### git 
+### git
 alias gs="git status"
 # visual last 10 via graph
-alias "ggraph"="git log --oneline -n 10 --graph --color --all --decorate"  
+alias "ggraph"="git log --oneline -n 10 --graph --color --all --decorate"
 alias "gam"="git add . && git commit -m 'lazy_commit'"
 ### end of git
 
@@ -71,7 +72,7 @@ setopt INC_APPEND_HISTORY # adds commands as they are typed
 setopt HIST_IGNORE_DUPS  # do not store duplications
 ### end of set opt#
 
-### tab auto-complete 
+### tab auto-complete
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
@@ -119,8 +120,3 @@ precmd_functions+=(_fix_cursor)
 # 6  ⇒  steady bar, xterm.
 
 ### end of bindkey with vim
-
-### auto suggestion
-#source ~/zsh-autosuggestions/zsh-autosuggestions.zsh
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
-### end of auto suggestion
