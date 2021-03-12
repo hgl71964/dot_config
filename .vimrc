@@ -35,7 +35,7 @@ let g:gruvbox_underline=1
 let g:gruvbox_termcolors=256
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox  " can use gruvbox if installed
-"set termguicolors  enable by default
+set termguicolors  " enable by default
 set background=dark
 " end of color
 
