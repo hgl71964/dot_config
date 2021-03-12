@@ -29,12 +29,12 @@
 filetype on
 
 " color
-let g:gruvbox_bold=1
+"let g:gruvbox_bold=1
 "let g:gruvbox_italic=1
-let g:gruvbox_underline=1
-let g:gruvbox_termcolors=256
+"let g:gruvbox_underline=1
+"let g:gruvbox_termcolors=256
 let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox  " can use gruvbox if installed
+colorscheme gruvbox
 set termguicolors  " enable by default
 set background=dark
 " end of color
