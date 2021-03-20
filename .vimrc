@@ -23,7 +23,6 @@
 " undo tree -> like git graph allowing quick view of progress
 " end of recommended plug-ins
 
-
 " basic {{{
 " VIM basic
 filetype on
@@ -128,7 +127,6 @@ nnoremap <S-k> v<Up>
 " fix the * position, but goes to the start of the current word
 nnoremap * *N
 
-
 " inoremap <C-d> <Esc>ddi
 inoremap <S-Tab> <C-d>
 inoremap <C-l> <ESC>$i<Right>
@@ -140,13 +138,12 @@ inoremap { {}<Left>
 inoremap " ""<Left>
 inoremap ' ''<Left>
 
-
-
-xnoremap <leader>( xi()<Esc>P
-xnoremap <leader>[ xi[]<Esc>P
-xnoremap <leader>{ xi{}<Esc>P
-xnoremap <leader>' xi''<Esc>P
-xnoremap <leader>" xi""<Esc>P
+" add surroundings on visual mode
+xnoremap <leader>( c()<Esc>P
+xnoremap <leader>[ c[]<Esc>P
+xnoremap <leader>{ c{}<Esc>P
+xnoremap <leader>' c''<Esc>P
+xnoremap <leader>" c""<Esc>P
 
 " Insert mode auto delete pairs; e.g. () <BS> -> delete both quote
 let g:couples = ['(#)', '[#]', '{#}', '<#>', '<div>#</div>', '"#"', ]  " TODO add ' to the list
