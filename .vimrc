@@ -18,7 +18,7 @@
 " multi-selection -> vim-visual-multi
 " vim-man -> man pages
 " rtags -> great for cpp
-" ctrlp vim -> nice file finding
+" fzf, leaderF vim -> fuzzy file finding
 " YouCompleteMe -> autocomplete
 " undo tree -> like git graph allowing quick view of progress
 " end of recommended plug-ins
