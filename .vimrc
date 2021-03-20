@@ -174,7 +174,7 @@ inoremap <silent> <BS> <C-r>=BetterBS()<CR>
 
 " auto command {{{
 
-" automatic highlight matching work under the cursor, FIXME if highlight color can customise?
+" automatic highlight matching work under the cursor, XXX if highlight color can customise?
 " By default, this will highlight the word under the cursor after 4s of inactivity.
 " autocmd CursorHold * :exec 'match Search /\V\<' . expand('<cword>') . '\>/'
 " set updatetime=100 " to make it happen after 0.1s instead.
