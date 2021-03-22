@@ -46,6 +46,10 @@ syntax enable
 " after using this command.  If you want Vim to overrule your settings with the
 " defaults, use:syntax on
 
+" shell in terminal mode
+set shell=/usr/bin/zsh
+" end of shell in terminal mode
+
 " backspace
 " vim will protect deletion from backspace
 " indent -> allow <bs> delete indentation
