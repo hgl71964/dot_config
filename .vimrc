@@ -114,9 +114,9 @@ let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 " mapleader {{{
 
 " use " " will choose the <space bar>
-" let mapleader = " "
+" let mapleader = " "  <Space> makes terminal mode slower
 " let localleader = ","
-let mapleader = ";"
+let mapleader = ","
 
 nnoremap <leader>config  :vsplit $MYVIMRC<cr>
 nnoremap <leader>fconfig :source $MYVIMRC<cr>
