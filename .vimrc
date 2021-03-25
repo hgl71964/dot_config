@@ -16,10 +16,10 @@
 " recommended plug-ins
 " gruvbox -> color scheme
 " multi-selection -> vim-visual-multi
-" vim-man -> man pages
-" rtags -> great for cpp
-" fzf, leaderF vim -> fuzzy file finding
+" leaderF vim -> fuzzy file finding
 " YouCompleteMe -> autocomplete
+" vim-signify -> git diff
+" vim-python/python-syntax -> python syntax highlight
 " undo tree -> like git graph allowing quick view of progress
 " end of recommended plug-ins
 
