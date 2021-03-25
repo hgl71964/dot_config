@@ -129,6 +129,9 @@ nnoremap <C-k> yydd<Up><Up>p
 nnoremap <S-j> v<Down>
 nnoremap <S-k> v<Up>
 
+" for fizzy file search
+nnoremap <leader>ff :Leaderf<Space>--popup<Space>file<CR>
+
 " fix the * position, but goes to the start of the current word
 nnoremap * *N
 
