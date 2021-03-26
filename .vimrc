@@ -154,7 +154,7 @@ xnoremap <leader>' c''<Esc>P
 xnoremap <leader>" c""<Esc>P
 
 " short cut on terminal mode
-tnoremap <leader>py py<Space>-m<Space>ipdb
+tnoremap <leader>py py<Space>-m<Space>ipdb<Space>
 
 
 " Insert mode auto delete pairs; e.g. () <BS> -> delete both quote
