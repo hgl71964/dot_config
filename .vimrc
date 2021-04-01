@@ -124,10 +124,8 @@ nnoremap <leader>fconfig :source $MYVIMRC<cr>
 
 
 " mapping {{{
-nnoremap <C-j> yyddp
-nnoremap <C-k> yydd<Up><Up>p
-nnoremap <S-j> v<Down>
-nnoremap <S-k> v<Up>
+nnoremap <C-j> ddp
+nnoremap <C-k> dd<Up><Up>p
 
 " for fizzy file search
 nnoremap <leader>ff :Leaderf<Space>--popup<Space>file<CR>
@@ -140,6 +138,10 @@ nnoremap <leader>tt :NERDTreeToggle<CR>
 
 " fix the * position, but goes to the start of the current word
 nnoremap * *N
+
+" switch to buffer
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
 
 " inoremap <C-d> <Esc>ddi
 inoremap <S-Tab> <C-d>
