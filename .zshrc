@@ -31,7 +31,7 @@ alias tm=tmux
 
 ### AWS
 alias aws='docker run --rm -it amazon/aws-cli'
-# auto apply credential
+# auto apply credential + mount file system
 #  alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 ### end of AWS
 
