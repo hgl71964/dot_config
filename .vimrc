@@ -161,6 +161,9 @@ xnoremap <leader>{ c{}<Esc>P
 xnoremap <leader>' c''<Esc>P
 xnoremap <leader>" c""<Esc>P
 
+" highlight visual selected txt
+xnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
 " short cut on terminal mode
 tnoremap <leader>py py<Space>-m<Space>ipdb<Space>
 
