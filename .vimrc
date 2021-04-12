@@ -313,5 +313,12 @@ function! Reversed(l)
 	return new_list
 endfunction
 
-
 "}}}
+
+
+"  plug_in config  {{{
+
+" this part may not be necessary as setup script will do this automatically when setting up containers
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+"}}}
+
