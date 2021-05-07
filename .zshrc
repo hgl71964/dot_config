@@ -29,6 +29,12 @@ alias "gam"="git add . && git commit -m 'lazy_commit'"
 alias tm=tmux
 ### end of tmux
 
+### make
+alias mk='make'
+alias mj='make -j$(nproc)'
+alias mc='make clean'
+### end of make
+
 ### AWS
 alias aws='docker run --rm -it amazon/aws-cli'
 # auto apply credential + mount file system
@@ -79,7 +85,6 @@ compinit -u
 _comp_options+=(globdots)		# Include hidden files.`
 ### end of auto-complete
 
-
 ### bindkey with vim
 #see: https://gist.github.com/LukeSmithxyz/e62f26e55ea8b0ed41a65912fbebbe52
 bindkey -v # enable vim in zsh
@@ -119,3 +124,5 @@ precmd_functions+=(_fix_cursor)
 # 6  ⇒  steady bar, xterm.
 
 ### end of bindkey with vim
+
+
