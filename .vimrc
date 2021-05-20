@@ -327,14 +327,14 @@ endfunction
 " Without any arguments the current buffer is kept.  With an argument the
 " buffer name/number supplied is kept.
 
-"command! -nargs=? -complete=buffer -bang Bonly
-"    \ :call BufOnly('<args>', '<bang>')
-"command! -nargs=? -complete=buffer -bang BOnly
-"    \ :call BufOnly('<args>', '<bang>')
-"command! -nargs=? -complete=buffer -bang Bufonly
-"    \ :call BufOnly('<args>', '<bang>')
-"command! -nargs=? -complete=buffer -bang BufOnly
-"    \ :call BufOnly('<args>', '<bang>')
+command! -nargs=? -complete=buffer -bang Bonly
+    \ :call BufOnly('<args>', '<bang>')
+command! -nargs=? -complete=buffer -bang BOnly
+    \ :call BufOnly('<args>', '<bang>')
+command! -nargs=? -complete=buffer -bang Bufonly
+    \ :call BufOnly('<args>', '<bang>')
+command! -nargs=? -complete=buffer -bang BufOnly
+    \ :call BufOnly('<args>', '<bang>')
 
 function! BufOnly(buffer, bang)
 	if a:buffer == ''
