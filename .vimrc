@@ -391,5 +391,12 @@ endfunction
 
 " this part may not be necessary as setup script will do this automatically when setting up containers
 " let g:ycm_autoclose_preview_window_after_insertion = 1
+
+"
+" sometimes i find completeopt slow vim down, so it'd better to limit its functionality
+" see -> :h completeopt
+"
+" :set completeopt=longest,menuone
+
 "}}}
 
