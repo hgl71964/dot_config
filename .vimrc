@@ -389,7 +389,6 @@ endfunction
 
 "  plug_in config  {{{
 
-" this part may not be necessary as setup script will do this automatically when setting up containers
 " let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "
@@ -398,6 +397,34 @@ endfunction
 "
 " :set completeopt=longest,menuone
 
+"
+" you complete me config from zhihu:
+"
+" let g:ycm_add_preview_to_completeopt = 0
+" let g:ycm_show_diagnostics_ui = 0
+" let g:ycm_server_log_level = 'info'
+" let g:ycm_min_num_identifier_candidate_chars = 2
+" let g:ycm_collect_identifiers_from_comments_and_strings = 1
+" let g:ycm_complete_in_strings=1
+" set completeopt=menu,menuone
+
+" enter 2 char will triger semantic completion, thanks to async feature starting from vim 8
+" let g:ycm_semantic_triggers =  {
+" 			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+" 			\ 'cs,lua,javascript': ['re!\w{2}'],
+" 			\ }
+
+" file type to enable ycm
+" let g:ycm_filetype_whitelist = { 
+" 			\ "c":1,
+" 			\ "cpp":1, 
+" 			\ "objc":1,
+"                       \ "go":1,
+" 			\ "python":1,
+" 			\ "sh":1,
+" 			\ "zsh":1,
+" 			\ "zimbu":1,
+" 			\ }
 "}}}
 
 " write vim profile log {{{
@@ -406,5 +433,5 @@ endfunction
 " :profile file *
 "" At this point do slow actions
 " :profile pause
-" :noautocmd qall!
+" :qa!
 " }}}
