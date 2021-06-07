@@ -124,8 +124,6 @@ nnoremap <leader>fconfig :source $MYVIMRC<cr>
 
 
 " mapping {{{
-nnoremap <C-j> ddp
-nnoremap <C-k> dd<Up><Up>p
 
 " switch to buffer
 nnoremap <C-h> :tabprevious<CR>
