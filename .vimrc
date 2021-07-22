@@ -423,6 +423,10 @@ endfunction
 " 			\ "zsh":1,
 " 			\ "zimbu":1,
 " 			\ }
+
+" enable all python syntax
+" let g:python_highlight_all = 1
+
 "}}}
 
 " write vim profile log {{{
