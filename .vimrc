@@ -50,6 +50,9 @@ syntax enable
 set shell=/usr/bin/zsh
 " end of shell in terminal mode
 
+" no beep
+set belloff=all
+
 " backspace
 " vim will protect deletion from backspace
 " indent -> allow <bs> delete indentation
