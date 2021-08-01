@@ -74,14 +74,15 @@ set relativenumber number numberwidth=1
 set expandtab " tab expand as spaces
 
 " local variable for indent width
-let b:indent_width = 4
+" let b:indent_width = 4
 
 " tab space in all files
-let &tabstop=b:indent_width
-let &shiftwidth=b:indent_width
-set softtabstop=4
+" let &tabstop=b:indent_width
+" let &shiftwidth=b:indent_width
+" set softtabstop=4
+
+set autoindent
 set smartindent
-" set autoindent
 " end of tab
 
 " search
@@ -217,16 +218,21 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " end of delete trailing white space when save
 
 
-
-
-augroup loggroup
-	autocmd BufWrite * :echom "Writing buffer!"
-augroup END
+" augroup loggroup
+" 	autocmd BufWrite * :echom "Writing buffer!"
+" augroup END
 
 augroup filetype_vim
-    " clear all autocmd for this group
-	autocmd!
+	autocmd! " clear all autocmd for this group
 	autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
+augroup FileTypeSpecificAutocommands
+    autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType php setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType c setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 
 " python
@@ -427,8 +433,6 @@ endfunction
 " 			\ "zimbu":1,
 " 			\ }
 
-" enable all python syntax
-" let g:python_highlight_all = 1
 
 "}}}
 
