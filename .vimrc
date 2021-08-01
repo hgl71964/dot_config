@@ -25,7 +25,8 @@
 
 " basic {{{
 " VIM basic
-filetype on
+filetype indent plugin on " i.e. filetype on + filetype plugin on + filetype indent on; turn on detection + plugin + indent
+
 
 " color
 "let g:gruvbox_bold=1
@@ -38,7 +39,6 @@ set termguicolors  " enable by default
 set background=dark
 " end of color
 
-filetype indent plugin on
 
 syntax enable
 " The ":syntax enable" command will keep your current color settings.  This
