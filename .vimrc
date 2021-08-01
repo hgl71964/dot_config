@@ -72,6 +72,8 @@ set relativenumber number numberwidth=1
 
 " tab
 set expandtab " tab expand as spaces
+set autoindent
+set smartindent
 
 " local variable for indent width
 " let b:indent_width = 4
@@ -80,9 +82,6 @@ set expandtab " tab expand as spaces
 " let &tabstop=b:indent_width
 " let &shiftwidth=b:indent_width
 " set softtabstop=4
-
-set autoindent
-set smartindent
 " end of tab
 
 " search
@@ -223,24 +222,30 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " augroup END
 
 augroup filetype_vim
-	autocmd! " clear all autocmd for this group
-	autocmd FileType vim setlocal foldmethod=marker
+    autocmd! " clear all autocmd for this group
+    autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
-augroup FileTypeSpecificAutocommands
+augroup filetype_python
+
+    " equivalent to -> autocmd BufEnter *.py let python_highlight_all=1
+    autocmd FileType python let python_highlight_all=1 
+
+    " compile & run python within vim
+    " autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+    " autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+augroup END
+
+
+augroup FileTypeSpecificIndentations
     autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType php setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType c setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
-    autocmd FileType python let python_highlight_all=1 " equivalent to -> autocmd BufEnter *.py let python_highlight_all=1
 augroup END
 
 
-
-" compile & run python within vim
-" autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-" autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 "}}}
 
 
