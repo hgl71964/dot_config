@@ -233,11 +233,10 @@ augroup FileTypeSpecificAutocommands
     autocmd FileType cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType c setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd FileType python let python_highlight_all=1 " equivalent to -> autocmd BufEnter *.py let python_highlight_all=1
 augroup END
 
-" python
-" \ let python_highlight_all=1 " TODO test: enable all py syntax highlight
-autocmd BufEnter *.py let python_highlight_all=1
+
 
 " compile & run python within vim
 " autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
