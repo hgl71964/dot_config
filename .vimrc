@@ -229,7 +229,7 @@ augroup filetype_python
     autocmd FileType python let python_highlight_all=1 
     
     " encoding
-    setlocal encoding=utf-8
+    autocmd FileType python setlocal encoding=utf-8
 
     " compile & run python within vim
     " autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
