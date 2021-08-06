@@ -417,6 +417,7 @@ endfunction
 " let g:ycm_min_num_identifier_candidate_chars = 2
 " let g:ycm_collect_identifiers_from_comments_and_strings = 1
 " let g:ycm_complete_in_strings=1
+" let let g:ycm_max_num_candidates=7
 " set completeopt=menu,menuone
 
 " enter 2 char will triger semantic completion, thanks to async feature starting from vim 8
