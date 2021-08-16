@@ -53,6 +53,11 @@ set shell=/usr/bin/zsh
 " no beep
 set belloff=all
 
+" backup, swap, undo file location
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+
 " backspace
 " vim will protect deletion from backspace
 " indent -> allow <bs> delete indentation
