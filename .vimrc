@@ -5,7 +5,7 @@
 " 4. :func SearchCompl       : List particular function
 " 5. :colorscheme <Space> <TAB> : to choose among colour scheme
 " 6. :@: 			:repeat last colon command
-" 7. plugin: YOUCOMPLETEME
+" 7. plugin: YOUCOMPLETEME -
 " vim path: /usr/share/vim/vim82
 " to see how to use package (plugin) -> :h packages
 " exmaple of plugin: :h write-plugin
@@ -54,9 +54,9 @@ set shell=/usr/bin/zsh
 set belloff=all
 
 " backup, swap, undo file location
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
+"set backupdir=~/.vim/backup//
+"set directory=~/.vim/swap//
+"set undodir=~/.vim/undo//
 
 " backspace
 " vim will protect deletion from backspace
@@ -224,15 +224,15 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " augroup END
 
 augroup filetype_vim
-    autocmd! " clear all autocmd for this group
+    " autocmd! " clear all autocmd for this group
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
 augroup filetype_python
 
     " equivalent to -> autocmd BufEnter *.py let python_highlight_all=1
-    autocmd FileType python let python_highlight_all=1 
-    
+    autocmd FileType python let python_highlight_all=1
+
     " encoding
     autocmd FileType python setlocal encoding=utf-8
 
@@ -279,8 +279,8 @@ set laststatus=2
 " set statusline+=%-14(%l,%c%V%)               " line, character
 " set statusline+=%<%P                         " file position
 
-let b:get_git_name  = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-let b:git_name = strlen(b:get_git_name) > 0?' '.b:get_git_name.' ':' _'
+" let b:get_git_name  = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+" let b:git_name = strlen(b:get_git_name) > 0?' '.b:get_git_name.' ':' _'
 
 set statusline=%f " relative path
 set statusline+=%#LineNr# "syntax highlighting
@@ -338,7 +338,7 @@ endfunction
 "
 " Usage:
 "
-" :Bonly / :BOnly / :Bufonly / :BufOnly [buffer] 
+" :Bonly / :BOnly / :Bufonly / :BufOnly [buffer]
 "
 " Without any arguments the current buffer is kept.  With an argument the
 " buffer name/number supplied is kept.
@@ -432,9 +432,9 @@ endfunction
 " 			\ }
 
 " file type to enable ycm
-" let g:ycm_filetype_whitelist = { 
+" let g:ycm_filetype_whitelist = {
 " 			\ "c":1,
-" 			\ "cpp":1, 
+" 			\ "cpp":1,
 " 			\ "objc":1,
 "                       \ "go":1,
 " 			\ "python":1,

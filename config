@@ -1,0 +1,11 @@
+# ssh config file
+
+Host ec
+  HostName ec2-34-248-194-160.eu-west-1.compute.amazonaws.com
+  User ec2-user
+  IdentityFile ~/.ssh/Ireland_ec1.cer
+  # Port *
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
