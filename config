@@ -17,6 +17,11 @@ Host cam_cl
   # forward kerberos ticket
   GSSAPIDelegateCredentials yes
   # Port *
+Host ran
+   Hostname ran.cl.cam.ac.uk
+   User gh512
+   GSSAPIAuthentication yes
+   GSSAPIDelegateCredentials yes
 Host cam_linux_cl
   HostName linux.cl.ds.cam.ac.uk
   User gh512
