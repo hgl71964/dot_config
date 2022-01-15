@@ -12,12 +12,11 @@
 " check runtimepath -> :set rtp? -> :h rtp
 " end of vim tips
 
-" TODO test different plugins
 " recommended plug-ins
 " gruvbox -> color scheme
 " multi-selection -> vim-visual-multi
 " leaderF vim -> fuzzy file finding
-" YouCompleteMe -> autocomplete
+" Kite, YouCompleteMe -> autocomplete
 " vim-signify -> git diff
 " vim-python/python-syntax -> python syntax highlight
 " undo tree -> like git graph allowing quick view of progress
