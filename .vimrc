@@ -26,6 +26,7 @@
 " VIM basic
 filetype indent plugin on " i.e. filetype on + filetype plugin on + filetype indent on; turn on detection + plugin + indent
 
+set noswapfile 
 
 " color
 "let g:gruvbox_bold=1
