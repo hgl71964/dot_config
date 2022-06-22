@@ -20,6 +20,9 @@
 " vim-signify -> git diff
 " vim-python/python-syntax -> python syntax highlight
 " undo tree -> like git graph allowing quick view of progress
+" ALE: https://github.com/dense-analysis/ale
+" GTAGS: https://www.gnu.org/software/global/globaldoc_toc.html#Vim-editor
+" AUTOCOMPLETE: https://github.com/neoclide/coc.nvim
 " end of recommended plug-ins
 
 " basic {{{
