@@ -21,7 +21,11 @@
 " vim-signify -> git diff
 " vim-python/python-syntax -> python syntax highlight
 " undo tree -> like git graph allowing quick view of progress
-" GTAGS (GNU global tagging): https://www.gnu.org/software/global/globaldoc_toc.html#Vim-editor
+" ======================================
+" GTAGS is a specific code tagging system; see https://www.gnu.org/software/global/globaldoc_toc
+" 1. install GTAGS
+" 2. plug-ins for GTAGS: gutentags -> https://github.com/ludovicchabant/vim-gutentags; 
+" also see: https://zhuanlan.zhihu.com/p/36279445
 " =======================================
 " LSP related: {LSP is a separate process running in the background; you need to connect vim as a client to it!!!}
 " ALE (linter & more LSP feature) -> https://github.com/dense-analysis/ale 
