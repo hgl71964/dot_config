@@ -13,16 +13,20 @@
 " end of vim tips
 
 " recommended plug-ins
+" ======================================
 " gruvbox -> color scheme
 " multi-selection -> vim-visual-multi
 " leaderF vim -> fuzzy file finding
-" Kite, YouCompleteMe, coc -> autocomplete
+" Kite, YouCompleteMe, coc (need LSP) -> autocomplete
 " vim-signify -> git diff
 " vim-python/python-syntax -> python syntax highlight
 " undo tree -> like git graph allowing quick view of progress
-" LSP for vim -> https://github.com/prabirshrestha/vim-lsp
-" ALE (linter & more) -> https://github.com/dense-analysis/ale " by default it does not offer LSP, need to install yourself!
 " GTAGS (GNU global tagging): https://www.gnu.org/software/global/globaldoc_toc.html#Vim-editor
+" =======================================
+" LSP related: {LSP is a separate process running in the background; you need to connect vim as a client to it!!!}
+" ALE (linter & more LSP feature) -> https://github.com/dense-analysis/ale 
+" vim-plugin to config LSP -> https://github.com/prabirshrestha/vim-lsp
+" =======================================
 " end of recommended plug-ins
 
 " basic {{{
