@@ -148,6 +148,7 @@ nnoremap <C-l> :tabnext<CR>
 
 " for fizzy file search
 nnoremap <leader>ff :Leaderf<Space>--popup<Space>file<CR>
+nnoremap <leader>fl :Leaderf<Space> line<CR>
 
 " directly start debugger
 nnoremap <leader>py :let @" = expand("%") <bar> :terminal<CR>py<Space>-m<Space>ipdb<Space><C-w>""<CR>
