@@ -16,7 +16,7 @@
 " ======================================
 " gruvbox -> color scheme
 " multi-selection -> vim-visual-multi
-" leaderF vim -> fuzzy file finding
+" leaderF vim -> fuzzy file finding; seems to have gtags integration, but doesn't work for now
 " Kite, YouCompleteMe, coc (need LSP) -> autocomplete
 " vim-signify -> git diff
 " vim-python/python-syntax -> python syntax highlight
