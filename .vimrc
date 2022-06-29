@@ -478,6 +478,7 @@ endfunction
 " 			\ }
 
 " =========================================
+" Firstly MUST set up GTAGS correctly!! (don't forget to cp gtags.vim)
 " GTAGS code tagging via Gutentags
 " gutentags 搜索工程目录的标志，当前文件路径向上递归直到碰到这些文件/目录名
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
@@ -485,7 +486,7 @@ let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
 " 所生成的数据文件的名称
 let g:gutentags_ctags_tagfile = '.tags'
 
-" 同时开启 ctags 和 gtags 支持：
+" enable ctags + gtags; if no ctags just disable
 let g:gutentags_modules = []
 if executable('ctags')
 	let g:gutentags_modules += ['ctags']
@@ -507,6 +508,12 @@ let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
 
 " 禁用 gutentags 自动加载 gtags 数据库的行为
 let g:gutentags_auto_add_gtags_cscope = 0
+
+" IF gutentags has ERROR: DEBUG (see trace)
+" let g:gutentags_define_advanced_commands = 1
+" :GutentagsToggleTrace
+" :messages
+" LIKELY a permission problem; just chmod +x <the_bash_script>
 " =========================================
 
 "}}}
