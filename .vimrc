@@ -154,6 +154,12 @@ nnoremap <C-l> :tabnext<CR>
 nnoremap <leader>ff :Leaderf<Space>--popup<Space>file<CR>
 nnoremap <leader>fl :Leaderf<Space> line<CR>
 
+
+" Gtags
+nnoremap <C-]> :GtagsCursor<CR>
+nnoremap <leader>gg :Gtags<Space>-g<Space>
+" nnoremap <leader>gr :<C-U><C-R>=printf("Gtags -r %s", expand("<cword>"))<CR><CR> " search on current line?
+" nnoremap <leader>gr :Gtags<Space>-r<Space>
 " Gtags quickfix jump
 nnoremap <C-k> :cp<CR>
 nnoremap <C-j> :cn<CR>
