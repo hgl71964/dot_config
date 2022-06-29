@@ -20,8 +20,9 @@
 " vim-signify -> git diff
 " vim-python/python-syntax -> python syntax highlight
 " undo tree -> like git graph allowing quick view of progress
-" ALE: https://github.com/dense-analysis/ale
-" GTAGS: https://www.gnu.org/software/global/globaldoc_toc.html#Vim-editor
+" LSP for vim -> https://github.com/prabirshrestha/vim-lsp
+" ALE (linter & more) -> https://github.com/dense-analysis/ale " by default it does not offer LSP, need to install yourself!
+" GTAGS (GNU global tagging): https://www.gnu.org/software/global/globaldoc_toc.html#Vim-editor
 " AUTOCOMPLETE: https://github.com/neoclide/coc.nvim
 " end of recommended plug-ins
 
