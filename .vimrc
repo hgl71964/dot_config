@@ -92,7 +92,7 @@ set relativenumber number numberwidth=1
 set expandtab " tab expand as spaces
 set autoindent
 set smartindent
-set switchbuf+=usetab,newtab " quickfix jump to tab OR open file in another tab
+" set switchbuf+=usetab,newtab " quickfix open file in another tab; but it will oepn every single tab
 
 " local variable for indent width
 " let b:indent_width = 4
