@@ -524,6 +524,12 @@ let g:gutentags_auto_add_gtags_cscope = 0
 " :GutentagsToggleTrace
 " :messages
 " LIKELY a permission problem; just chmod +x <the_bash_script>
+
+
+" leaderF not search virtual env
+" let g:Lf_UseVersionControlTool = 0
+" let g:Lf_WildIgnore = {'dir': ['*venv*']}
+
 " =========================================
 
 "}}}
