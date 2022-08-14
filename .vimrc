@@ -29,7 +29,7 @@
 " =======================================
 " LSP related: {LSP is a separate process running in the background; you need to connect vim as a client to it!!!}
 " ALE (linter & more LSP feature) -> https://github.com/dense-analysis/ale 
-" vim-plugin to config LSP -> https://github.com/prabirshrestha/vim-lsp
+" vim-lsp + vim-lsp-settings -> for automatically config lsp for vim
 " =======================================
 " end of recommended plug-ins
 
