@@ -164,9 +164,6 @@ nnoremap <leader>gg :Gtags<Space>-g<Space>
 nnoremap <C-k> :cp<CR>
 nnoremap <C-j> :cn<CR>
 
-" directly start debugger
-nnoremap <leader>py :let @" = expand("%") <bar> :terminal<CR>py<Space>-m<Space>ipdb<Space><C-w>""<CR>
-
 " Toggle nerdtree
 nnoremap <leader>tt :NERDTreeToggle<CR>
 
@@ -193,10 +190,6 @@ xnoremap <leader>" c""<Esc>P
 
 " highlight visual selected txt
 xnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
-
-" short cut on terminal mode
-tnoremap <leader>py py<Space>-m<Space>ipdb<Space>
-
 
 " Insert mode auto delete pairs; e.g. () <BS> -> delete both quote
 let g:couples = ['(#)', '[#]', '{#}', '<#>', '<div>#</div>', '"#"', ]  " TODO add ' to the list
