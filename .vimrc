@@ -4,8 +4,7 @@
 " 3. :function               : list functions
 " 4. :func SearchCompl       : List particular function
 " 5. :colorscheme <Space> <TAB> : to choose among colour scheme
-" 6. :@: 			:repeat last colon command
-" 7. plugin: YOUCOMPLETEME -
+" 6. @: 			:repeat last colon command
 " vim path: /usr/share/vim/vim82
 " to see how to use package (plugin) -> :h packages
 " exmaple of plugin: :h write-plugin
@@ -16,11 +15,9 @@
 " ======================================
 " gruvbox -> color scheme
 " multi-selection -> vim-visual-multi
-" leaderF vim -> fuzzy file finding; seems to have gtags integration, but doesn't work for now
+" leaderF vim -> fuzzy file finding
 " Kite, YouCompleteMe, coc (need LSP) -> autocomplete
 " vim-signify -> git diff
-" vim-python/python-syntax -> python syntax highlight
-" undo tree -> like git graph allowing quick view of progress
 " ======================================
 " GTAGS is a specific code tagging system; see https://www.gnu.org/software/global/globaldoc_toc
 " 1. install GTAGS
