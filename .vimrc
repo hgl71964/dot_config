@@ -16,16 +16,17 @@
 " gruvbox -> color scheme
 " multi-selection -> vim-visual-multi
 " leaderF vim -> fuzzy file finding
-" Kite, YouCompleteMe, coc (need LSP) -> autocomplete
 " vim-signify -> git diff
+" vim-easymotion (or vim9-stargate) -> highlight vim motion jump!
+" (easymotion will add its own mapping)
 " ======================================
 " GTAGS is a specific code tagging system; see https://www.gnu.org/software/global/globaldoc_toc
 " 1. install GTAGS
-" 2. plug-ins for GTAGS: gutentags -> https://github.com/ludovicchabant/vim-gutentags; 
+" 2. plug-ins for GTAGS: gutentags -> https://github.com/ludovicchabant/vim-gutentags;
 " also see: https://zhuanlan.zhihu.com/p/36279445
 " =======================================
 " LSP related: {LSP is a separate process running in the background; you need to connect vim as a client to it!!!}
-" ALE (linter & more LSP feature) -> https://github.com/dense-analysis/ale 
+" ALE (linter & more LSP feature) -> https://github.com/dense-analysis/ale
 " vim-lsp + vim-lsp-settings -> for automatically config lsp for vim
 " =======================================
 " end of recommended plug-ins
@@ -34,14 +35,14 @@
 " VIM basic
 filetype indent plugin on " i.e. filetype on + filetype plugin on + filetype indent on; turn on detection + plugin + indent
 
-set noswapfile 
+set noswapfile
 
 " color
 "let g:gruvbox_bold=1
 "let g:gruvbox_italic=1
 "let g:gruvbox_underline=1
 "let g:gruvbox_termcolors=256
-let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_dark='medium'
 colorscheme gruvbox
 set termguicolors  " enable by default
 set background=dark
@@ -129,7 +130,6 @@ let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 " end of cursor
 "}}}
 
-
 " mapleader {{{
 
 " use " " will choose the <space bar>
@@ -141,28 +141,11 @@ nnoremap <leader>config  :vsplit $MYVIMRC<cr>
 nnoremap <leader>fconfig :source $MYVIMRC<cr>
 "}}}
 
-
 " mapping {{{
 
 " switch to buffer
 nnoremap <C-h> :tabprevious<CR>
 nnoremap <C-l> :tabnext<CR>
-
-" for fizzy file search
-nnoremap <leader>ff :Leaderf<Space>--popup<Space>file<CR>
-nnoremap <leader>fl :Leaderf<Space> line<CR>
-" LeaderF gtags <sub-command> is a series command that uses Gtags...
-
-" Gtags
-nnoremap <C-]> :GtagsCursor<CR>
-nnoremap <leader>gg :Gtags<Space>-g<Space>
-" nnoremap <leader>gr :<C-U><C-R>=printf("Gtags -r %s", expand("<cword>"))<CR><CR> " search on current line?
-" Gtags quickfix jump
-nnoremap <C-k> :cp<CR>
-nnoremap <C-j> :cn<CR>
-
-" Toggle nerdtree
-nnoremap <leader>tt :NERDTreeToggle<CR>
 
 " fix the * position, but goes to the start of the current word
 nnoremap * *N
@@ -207,10 +190,49 @@ function BetterBS()
     return "\<BS>"
 endfunction
 inoremap <silent> <BS> <C-r>=BetterBS()<CR>
+
+
+" =======================================
+" Leaderf fizzy file search
+nnoremap <leader>ff :Leaderf<Space>--popup<Space>file<CR>
+nnoremap <leader>fl :Leaderf<Space> line<CR>
+" LeaderF gtags <sub-command> is a series command that uses Gtags...
+
+
+" =======================================
+" NERDTree Toggle nerdtree
+nnoremap <leader>tt :NERDTreeToggle<CR>
+
+
+" =======================================
+" Gtags
+nnoremap <C-]> :GtagsCursor<CR>
+nnoremap <leader>gg :Gtags<Space>-g<Space>
+" nnoremap <leader>gr :<C-U><C-R>=printf("Gtags -r %s", expand("<cword>"))<CR><CR> " search on current line?
+" Gtags quickfix jump
+nnoremap <C-k> :cp<CR>
+nnoremap <C-j> :cn<CR>
+
+
+" =======================================
+" LSP mapping (vim-lsp + vim-lsp-settings)
+nnoremap <leader>ls :LspStatus<CR>
+nnoremap <leader>ld :LspDefinition<CR>
+nnoremap <leader>lc :LspDeclaration<CR>
+nnoremap <leader>lt :LspTypeDefinition<CR>
+nnoremap <leader>lh :LspHover<CR>
+nnoremap <leader>lr :LspReferences<CR>
+nnoremap <leader>lpd :LspPeekDefinition<CR>
+nnoremap <leader>lpc :LspPeekDeclaration<CR>
+nnoremap <leader>lpt :LspPeekTypeDefinition<CR>
+nnoremap <leader>lda :LspDocumentDiagnostics<CR>
+
+" open a file in quickfix list to a new tab
+nnoremap <leader>co :tab copen<CR>
+
 " end of insert mode delete
 "
 "}}}
-
 
 " auto command {{{
 
@@ -270,7 +292,6 @@ augroup END
 
 "}}}
 
-
 " statusline {{{
 set laststatus=2
 
@@ -317,12 +338,10 @@ set statusline+=/
 set statusline+=%L "total line
 "}}}
 
-
 " branching {{{
 " ==# is the case-sensitive comparison no matter what the user has set
 " ==? is the case-insensitive comparison no matter what the user has set
 "}}}
-
 
 "  function  {{{
 
@@ -334,12 +353,7 @@ set statusline+=%L "total line
 
 "}}}
 
-
 " helper_function  {{{
-
-
-
-
 function! Reversed(l)
 	let new_list = deepcopy(a:l)
 	call reverse(new_list)
@@ -436,7 +450,6 @@ endfunction
 
 "}}}
 
-
 "  plug_in config  {{{
 
 " let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -478,6 +491,7 @@ endfunction
 " 			\ }
 
 " =========================================
+" GTAGS
 " Firstly MUST set up GTAGS correctly!! (don't forget to cp gtags.vim)
 " GTAGS code tagging via Gutentags
 " gutentags 搜索工程目录的标志，当前文件路径向上递归直到碰到这些文件/目录名
@@ -516,11 +530,28 @@ let g:gutentags_auto_add_gtags_cscope = 0
 " LIKELY a permission problem; just chmod +x <the_bash_script>
 
 
+" =========================================
 " leaderF not search virtual env
 " let g:Lf_UseVersionControlTool = 0
 " let g:Lf_WildIgnore = {'dir': ['*venv*']}
 
 " =========================================
+" LSP
+"let g:lsp_diagnostics_enabled = 0         " disable diagnostics support
+let g:lsp_document_highlight_enabled = 0
+
+" note that this can be config on a per project basis
+" TODO does not seem to be effective
+let g:lsp_settings = {
+\   'pylsp-all': {
+\     'workspace_config': {
+\       'pylsp': {
+\         'configurationSources': ['pylint']
+\       }
+\     }
+\   },
+\}
+
 
 "}}}
 
