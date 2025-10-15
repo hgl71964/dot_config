@@ -1,4 +1,7 @@
 
+#git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/git_repo/zsh-syntax-highlighting
+#git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git ~/git_repo/zsh-autosuggestions
+
 ### syntax-highligh
 # see: https://github.com/zsh-users/zsh-syntax-highlighting; put right path
 source $HOME/git_repo/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

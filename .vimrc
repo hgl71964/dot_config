@@ -172,24 +172,24 @@ xnoremap <leader>" c""<Esc>P
 xnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " Insert mode auto delete pairs; e.g. () <BS> -> delete both quote
-let g:couples = ['(#)', '[#]', '{#}', '<#>', '<div>#</div>', '"#"', ]  " TODO add ' to the list
-function BetterBS()
-
-    for l:couple in g:couples
-        if ! (l:couple =~ '#')
-            continue
-        endif
-        let l:regex = substitute(escape(l:couple, '/\^$*.[~'), '#', '\\%#', '')
-        if search(l:regex, 'n')
-            let l:out = repeat("\<BS>", len(matchstr(l:couple, '^.\{-}\ze#')))
-            let l:out .= repeat("\<DEL>", len(matchstr(l:couple, '#\zs.\{-}$')))
-            return l:out
-        endif
-    endfor
-
-    return "\<BS>"
-endfunction
-inoremap <silent> <BS> <C-r>=BetterBS()<CR>
+"let g:couples = ['(#)', '[#]', '{#}', '<#>', '<div>#</div>', '"#"', ]  " TODO add ' to the list
+"function BetterBS()
+"
+"    for l:couple in g:couples
+"        if ! (l:couple =~ '#')
+"            continue
+"        endif
+"        let l:regex = substitute(escape(l:couple, '/\^$*.[~'), '#', '\\%#', '')
+"        if search(l:regex, 'n')
+"            let l:out = repeat("\<BS>", len(matchstr(l:couple, '^.\{-}\ze#')))
+"            let l:out .= repeat("\<DEL>", len(matchstr(l:couple, '#\zs.\{-}$')))
+"            return l:out
+"        endif
+"    endfor
+"
+"    return "\<BS>"
+"endfunction
+"inoremap <silent> <BS> <C-r>=BetterBS()<CR>
 
 
 " =======================================
