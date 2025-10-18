@@ -1,0 +1,18 @@
+{
+    "python.analysis.extraPaths": [
+        "python/"
+    ],
+
+    // config table-gen LSP
+    "mlir.tablegen_compilation_databases": [
+        "~/build/cmake.macosx-15.0-arm64-cpython-3.14/tablegen_compile_commands.yml"
+    ],
+    "mlir.tablegen_server_path": "/opt/homebrew/opt/llvm/bin/tblgen-lsp-server",
+
+    // triton IR syntax highlight
+    "files.associations": {
+        "*.llir": "mlir",
+        "*.ttir": "mlir",
+        "*.ttgir": "mlir"
+    }
+}
