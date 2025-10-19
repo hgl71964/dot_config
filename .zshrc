@@ -1,6 +1,9 @@
 
 #git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/git_repo/zsh-syntax-highlighting
 #git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git ~/git_repo/zsh-autosuggestions
+#
+export PATH="$(brew --prefix)/bin:$PATH"
+export PATH="$(brew --prefix llvm)/bin:$PATH"
 
 ### syntax-highligh
 # see: https://github.com/zsh-users/zsh-syntax-highlighting; put right path
