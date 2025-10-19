@@ -3,6 +3,11 @@
 #git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git ~/git_repo/zsh-autosuggestions
 #
 export PATH="$(brew --prefix)/bin:$PATH"
+
+# llvm-related stuff
+# brew install llvm
+# brew install lld
+# brew install lit
 export PATH="$(brew --prefix llvm)/bin:$PATH"
 
 ### syntax-highligh
